@@ -1,9 +1,9 @@
 # The Homebrew cask, rendered by `task release:cask` (version and sha256 filled in)
 # and pushed to adatoo/homebrew-tap by the Release workflow (ADR D-033). Edit it here,
 # not in the tap: the tap's copy is overwritten on every release.
-cask "quail" do
-  version "0.9.0"
-  sha256 "06bdd9370dca6c6e442f1a1b86cd1ac2c3dfe9dfe201c9ec8d17079a995b626f"
+cask "quail-ai" do
+  version "0.9.1"
+  sha256 "09ebc7f35fad901cb43d5e66d24564d825dfcccd42ea92d91d4c66d131a9f293"
 
   url "https://github.com/adatoo/quail/releases/download/v#{version}/Quail-#{version}.dmg"
   name "Quail"
