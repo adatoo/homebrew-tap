@@ -2,8 +2,8 @@
 # and pushed to adatoo/homebrew-tap by the Release workflow (ADR D-033). Edit it here,
 # not in the tap: the tap's copy is overwritten on every release.
 cask "quail-ai" do
-  version "0.65.3"
-  sha256 "a899820506341473265feda8470f4654442032cb2ec0afbf0183959f79aa4f58"
+  version "0.66.0"
+  sha256 "1086e1e1464d7e01214a86b6502c7cedf117734f0114e37f7f76be3104947b84"
 
   url "https://github.com/adatoo/quail/releases/download/v#{version}/Quail-#{version}.dmg"
   name "Quail"
