@@ -2,8 +2,8 @@
 # and pushed to adatoo/homebrew-tap by the Release workflow (ADR D-033). Edit it here,
 # not in the tap: the tap's copy is overwritten on every release.
 cask "quail-ai" do
-  version "0.74.2"
-  sha256 "46ca99f716d773f15d706a76dd9cf234ab3cd0ad6ae804c8273067cb41c3731d"
+  version "0.74.3"
+  sha256 "27f5567d549b8386d438c4a4241350776ff699c1100e16bdeb90b47af7c0d56a"
 
   url "https://github.com/adatoo/quail/releases/download/v#{version}/Quail-#{version}.dmg"
   name "Quail"
@@ -24,11 +24,20 @@ cask "quail-ai" do
   # The `quail` command-line tool ships inside the app.
   binary "#{appdir}/Quail.app/Contents/Helpers/quail"
 
-  # Downloaded models live in a folder you choose, so they are deliberately not listed here.
+  # Downloaded models are never trashed: the default store is Application Support/Quail/Models, so Quail's own
+  # files there are listed one by one, and the folder itself goes only if nothing else is left in it.
   zap trash: [
-    "~/Library/Application Support/Quail",
-    "~/Library/Caches/com.datoos.quail",
-    "~/Library/Logs/Quail",
-    "~/Library/Preferences/com.datoos.quail.plist",
-  ]
+        "~/Library/Application Support/Quail/benchmarks.json",
+        "~/Library/Application Support/Quail/Cache",
+        "~/Library/Application Support/Quail/catalog-refresh.json",
+        "~/Library/Application Support/Quail/chat-history",
+        "~/Library/Application Support/Quail/config.json",
+        "~/Library/Application Support/Quail/control.sock",
+        "~/Library/Application Support/Quail/mlx-models-refresh.json",
+        "~/Library/Application Support/Quail/user-catalog.json",
+        "~/Library/Caches/com.datoos.quail",
+        "~/Library/Logs/Quail",
+        "~/Library/Preferences/com.datoos.quail.plist",
+      ],
+      rmdir: "~/Library/Application Support/Quail"
 end
